@@ -25,19 +25,21 @@ import './App.css';
 // import ErrorBoudary from './component/ErrorBoudary';
 // import Clickcounter from './component/Clickcounter';
 // import HoverCounter from './component/HoverCounter';
-import Clickcounter2 from './component/Clickcounter2';
-import Hovercounter2 from './component/Hovercounter2';
-import User from './component/user'
-
+// import Clickcounter2 from './component/Clickcounter2';
+// import Hovercounter2 from './component/Hovercounter2';
+// import User from './component/user'
+import ComponentC from './component/ComponentC';
+import {UserProvider} from './component/userContext'
 function App() {
   return (
     <div className="App">
-      <User render={(count,incrementCount)=>{
-        <Clickcounter2 count={count} incrementCount={incrementCount}></Clickcounter2>
-      }}></User>
-      <User render={(count,incrementCount)=>{
-        <Hovercounter2 count={count} incrementCount={incrementCount}></Hovercounter2>
-      }}></User>
+      <UserProvider value='adarsh'>
+        <ComponentC></ComponentC>
+      </UserProvider>
+      {/* <User render={(count,incrementCount)=>(
+        <Clickcounter2 count={count} incrementCount={incrementCount}></Clickcounter2> )}></User>
+      <User render={(count,incrementCount)=>(
+        <Hovercounter2 count={count} incrementCount={incrementCount}></Hovercounter2> )}></User> */}
       {/* <Clickcounter2></Clickcounter2>
       <Hovercounter2></Hovercounter2>
       <User name={(isloggedin) => isloggedin ? 'Adarsh':'Guest'}></User> */}
